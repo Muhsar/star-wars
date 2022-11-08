@@ -21,13 +21,13 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <>
     <DefaultSeo
-                titleTemplate="%s - James Wallis"
+                titleTemplate="%s - SWAPI"
                 openGraph={{
                     type: 'website',
                     locale: 'en_IE',
                     url,
-                    description: 'The personal website for James Wallis, developer.',
-                    site_name: 'James Wallis | wallis.dev',
+                    description: 'Star wars information',
+                    site_name: 'SWAPI | star-wars-lemon.vercel.app',
                     images: [],
                 }}
                 canonical={url}
