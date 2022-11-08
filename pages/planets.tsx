@@ -2,6 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs"
+import { NextSeo } from 'next-seo'
+import { motion } from 'framer-motion'
 
 export default function Planets() {
   const fetchPlanets = async (page) =>  {
@@ -15,9 +17,19 @@ export default function Planets() {
     keepPreviousData : true
   })
   console.log(data)
+  const variants = {
+    hidden: { opacity: 0, x: -200, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100 },
+}
   return (
-    <>
-    <div className="w-full flex justify-center items-center my-4">
+    <motion.div initial="hidden"
+    animate="enter"
+    exit="exit"
+    variants={variants}
+    transition={{ type: 'linear' }}>
+    <NextSeo title={"Star Wars"} description={"Star wars information"} openGraph={{ title:"Star Wars", description:"Star wars information" }} />
+    <motion.div  className="w-full flex justify-center items-center my-4">
       <button
       className='cursor-pointer flex items-center px-4 py-2 rounded-full border-[#ffff57] border-2 hover:bg-white hover:text-[#1b1b1b] duration-500 transition-all transform hover:scale-105 disabled:opacity-40'
       onClick={() => setPage(old => Math.max(old - 1, 1))}
@@ -39,7 +51,7 @@ export default function Planets() {
         Next
         <BsChevronRight />
       </button>
-        </div>
+        </motion.div>
       {
         status==="error" && <div className='h-screen w-full flex flex-col items-center justify-center'>
         <div className='text-7xl'>
@@ -68,6 +80,6 @@ export default function Planets() {
           }
       </div>
       }
-    </>
+    </motion.div>
   )
 }
