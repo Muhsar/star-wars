@@ -14,7 +14,7 @@ export default function Home() {
 }
   return (
     <>
-    <NextSeo title={"Star Wars"} description={"Star wars information"} openGraph={{ title:"Star Wars", description:"Star wars information" }} />
+    <NextSeo title={"SWAPI"} description={"Star wars information"} openGraph={{ title:"SWAPI", description:"Star wars information" }} />
     <motion.div initial="hidden"
             animate="enter"
             exit="exit"
@@ -24,7 +24,7 @@ export default function Home() {
         Welcome to SWAPI
       </div>
       <div>
-        A Star Wars Info Platform, More Updates Coming In Soon.....
+        A Star Wars Information Platform, More Updates Coming In Soon.....
       </div>
     </motion.div>
     </>

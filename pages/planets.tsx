@@ -28,7 +28,7 @@ export default function Planets() {
     exit="exit"
     variants={variants}
     transition={{ type: 'linear' }}>
-    <NextSeo title={"Star Wars"} description={"Star wars information"} openGraph={{ title:"Star Wars", description:"Star wars information" }} />
+    <NextSeo title={"SWAPI"} description={"Star wars information"} openGraph={{ title:"SWAPI", description:"Star wars information" }} />
     <motion.div  className="w-full flex justify-center items-center my-4">
       <button
       className='cursor-pointer flex items-center px-4 py-2 rounded-full border-[#ffff57] border-2 hover:bg-white hover:text-[#1b1b1b] duration-500 transition-all transform hover:scale-105 disabled:opacity-40'
